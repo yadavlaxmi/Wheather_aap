@@ -1,3 +1,4 @@
+import { useState } from "react";
 import React from "react";
 import Nature from "../assest/nature.jpeg";
 import { Box, styled } from "@mui/material";
@@ -19,13 +20,14 @@ const Image = styled(Box)({
 });
 
 const Home = () => {
+  const[result,setResult]=useState({})
   return (
     <>
       <Component>
         <Image></Image>
         <Box sx={{width:"73%",height:"80%"}}>
-            <Form/>
-            <Information/>
+            <Form setResult={setResult}/>
+            <Information result={result}/>
         </Box>
       </Component>
     </>
